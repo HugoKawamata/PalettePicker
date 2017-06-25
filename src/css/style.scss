@@ -1,0 +1,15 @@
+@import 'variables';
+
+.spot {
+    width: $spot-width;
+    height: $spot-width;
+    border-radius: $spot-width / 2;
+    display: inline-block;
+    margin-right: $spot-width / 2;
+}
+
+.palette-color {
+    line-height: $spot-width;
+    display: flex;
+    align-content: flex-start;
+}
