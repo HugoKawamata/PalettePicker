@@ -1,14 +1,15 @@
 import React from "react";
 
-import Picker from "./Picker";
 import Palette from "./Palette";
+import Picker from "./Picker";
+import Preview from "./Preview";
 
 export default class Main extends React.Component {
     constructor() {
         super();
         this.state = {
             activeColor: {hex: "#14ff90"},
-            palette: []
+            palette: [],
         };
     }
 
@@ -34,6 +35,12 @@ export default class Main extends React.Component {
         this.setState({activeColor: color, palette: this.state.palette});
     }
 
+    grabColor(i) {
+        const color = this.state.palette[i].color;
+        this.setState({activeColor: color, palette: this.state.palette})
+
+    }
+
 
     render() {
         const colorArray = [];
@@ -43,7 +50,7 @@ export default class Main extends React.Component {
             colorArray.push(
                 <div key = {i.toString()} className = "palette-color">
                     <div className = "color">
-                        <div className = "spot" style = {spotColor}></div>
+                        <div className = "spot" style = {spotColor} onClick = {() => this.grabColor(i)}></div>
                         <div className = "colorName">
                             {this.state.palette[i].color.hex}: {this.state.palette[i].name}
                         </div>
@@ -63,6 +70,9 @@ export default class Main extends React.Component {
                 />
                 <Palette
                     colorArray = {colorArray}
+                />
+                <Preview 
+                    activeColor = {this.state.activeColor}
                 />
             </div>
         );
