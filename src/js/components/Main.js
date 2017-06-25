@@ -21,9 +21,19 @@ export default class Main extends React.Component {
         });
     }
 
+    removeFromPalette(i) {
+        var newPal = this.state.palette;
+        newPal.splice(i, 1);
+        this.setState({
+            activeColor: this.state.activeColor,
+            palette: newPal
+        })
+    }
+
     handleChangeComplete(color) {
         this.setState({activeColor: color, palette: this.state.palette});
     }
+
 
     render() {
         const colorArray = [];
@@ -36,6 +46,7 @@ export default class Main extends React.Component {
                     <div className = "colorName">
                         {this.state.palette[i].color.hex}: {this.state.palette[i].name}
                     </div>
+                    <div className = "remove-color-button" onClick = {() => this.removeFromPalette(i)}></div>
                 </div>
             );
         }

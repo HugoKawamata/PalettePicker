@@ -13,3 +13,12 @@
     display: flex;
     align-content: flex-start;
 }
+
+.remove-color-button {
+    width: $spot-width;
+    height: $spot-width;
+    border-radius: $spot-width / 2;
+    background-color: #ff0000;
+
+
+}
