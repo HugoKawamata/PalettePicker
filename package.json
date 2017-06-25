@@ -1,0 +1,24 @@
+{
+  "name": "palettepicker",
+  "version": "1.0.0",
+  "description": "A react webapp for picking colour palettes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HugoKawamata/PalettePicker.git"
+  },
+  "author": "Hugo Kawamata",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HugoKawamata/PalettePicker/issues"
+  },
+  "homepage": "https://github.com/HugoKawamata/PalettePicker#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.5.2",
+    "webpack": "^3.0.0"
+  }
+}
