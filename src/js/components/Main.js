@@ -42,16 +42,20 @@ export default class Main extends React.Component {
             spotColor = {backgroundColor: this.state.palette[i].color.hex};
             colorArray.push(
                 <div key = {i.toString()} className = "palette-color">
-                    <div className = "spot" style = {spotColor}></div>
-                    <div className = "colorName">
-                        {this.state.palette[i].color.hex}: {this.state.palette[i].name}
+                    <div className = "color">
+                        <div className = "spot" style = {spotColor}></div>
+                        <div className = "colorName">
+                            {this.state.palette[i].color.hex}: {this.state.palette[i].name}
+                        </div>
                     </div>
-                    <div className = "remove-color-button" onClick = {() => this.removeFromPalette(i)}></div>
+                    <div className = "remove-color-button" onClick = {() => this.removeFromPalette(i)}>
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </div>
                 </div>
             );
         }
         return (
-            <div>
+            <div className = "main">
                 <Picker 
                     backgroundColor = {this.state.activeColor}
                     handleChangeComplete = {(color) => this.handleChangeComplete(color)}
