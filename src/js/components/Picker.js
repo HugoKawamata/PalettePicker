@@ -23,8 +23,10 @@ export default class Picker extends React.Component {
                         onChangeComplete = {(color) => this.props.handleChangeComplete(color)}
                     />
                     <div className = "picker-options">
-                        <input type = "text" onChange = {(name) => this.updateColorName(name)}/>
-                        <button onClick = {
+                        <div className="centered-div picker-name-field">
+                            <div>Name: </div><input className="text" type = "text" onChange = {(name) => this.updateColorName(name)}/>
+                        </div>
+                        <button className="button is-dark centered-div" onClick = {
                             (name, color) => this.props.addToPalette(
                                 this.props.backgroundColor,
                                 this.state.colorName
