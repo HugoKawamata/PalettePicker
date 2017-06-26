@@ -1,6 +1,5 @@
 import React from "react";
 
-import ExportText from "./ExportText";
 import Palette from "./Palette";
 import Picker from "./Picker";
 import Preview from "./Preview";
